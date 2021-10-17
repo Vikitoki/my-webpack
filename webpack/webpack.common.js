@@ -2,10 +2,9 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  mode: "development",
   entry: "./src/index.tsx",
   output: {
-    path: path.resolve(__dirname, "build"),
+    path: path.resolve(__dirname, "..", "build"),
     filename: "bundle.js",
   },
   module: {
@@ -33,6 +32,10 @@ module.exports = {
       {
         test: /\.(jpg|png|svg|jpeg|gif)$/,
         type: "asset/resource",
+      },
+      {
+        test: /\.(svg|eot|ttf|otf|woff(2)?)$/,
+        type: "asset/inline",
       },
     ],
   },
